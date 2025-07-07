@@ -1,0 +1,129 @@
+.RegisterContainer {
+    min-width: 320px;
+    min-height: 263px;
+    padding: 16px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 182px;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.logoIcon {
+    width: 36px;
+    height: 36px;
+}
+
+.logoName {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 133%;
+}
+.RegisterImg{
+    width: 247px;
+    margin: 0 auto;
+}
+.Form {
+    padding: 32px 16px;
+    border-radius: 25px 25px 0 0;
+    min-width: 320px;
+    min-height: 549px;
+    background: rgba(133, 170, 159, 0.1);
+}
+.formName {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 105%;
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+}
+.formText {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: rgba(18, 20, 23, 0.8);
+    margin-bottom: 16px;
+}
+
+input {
+    border: 1px solid rgba(18, 20, 23, 0.1);
+    border-radius: 15px;
+    padding: 16px 28px 16px 18px;
+    min-width: 288px;
+    min-height: 56px;
+    background: transparent;
+    margin-bottom: 14px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #121417;
+}
+.formBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.buttonFormRegister {
+    border-radius: 30px;
+    padding: 16px 16px;
+    min-width: 288px;
+    min-height: 56px;
+    background-color: #85AA9F;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: #FCFCFC;
+    margin-top: 18px;
+}
+
+.buttonFormRegister:hover,
+.buttonFormRegister:focus {
+    background-color: #A5C0B8;
+}
+
+input::placeholder {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #121417;
+}
+input:hover,
+input:focus {
+    outline: none;
+    border: 1px solid #85AA9F;
+}
+
+.buttonFormLogin {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: rgba(18, 20, 23, 0.5);
+    background-color: transparent;
+}
+
+.buttonFormLogin:hover,
+.buttonFormLogin:focus {
+    color: #121417;
+}
+
+@media screen and (min-width: 375px) {
+    input {
+      width: 339px;
+}
+.buttonFormRegister {
+    width: 343px;
+ }
+}
