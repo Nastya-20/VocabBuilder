@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { registerSchema } from '../../components/authSchema';
 import css from "./RegisterPage.module.css";
-import { toast } from 'react-toastify'; // якщо використовуєш
+import { toast } from 'react-toastify'; 
 
-export default function RegisterPage({ onSubmit, onClose, onSwitchToLogin }) {
+const RegisterPage = ({ onSubmit, onClose }) => {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
@@ -21,16 +21,17 @@ export default function RegisterPage({ onSubmit, onClose, onSwitchToLogin }) {
 
     const submitForm = async (data) => {
         try {
-            await onSubmit(data); 
+            await onSubmit(data);
             onClose();
             reset();
-            navigate("/dictionary")
-        } catch (error) {
+       } catch (error) {
             toast.error(error.message || "Registration failed");
-            onSwitchToLogin(); 
         }
     };
-
+    const handleLoginClick = () => {
+        navigate('/login');
+    };
+    
     return (
         <>
             <div className={css.RegisterContainer}>
@@ -99,7 +100,7 @@ export default function RegisterPage({ onSubmit, onClose, onSwitchToLogin }) {
                     <button
                         className={css.buttonFormLogin}
                         type="button"
-                        onClick={onSwitchToLogin}
+                        onClick={handleLoginClick}
                     >
                         Login
                     </button>
@@ -107,4 +108,6 @@ export default function RegisterPage({ onSubmit, onClose, onSwitchToLogin }) {
             </form>
         </>
     );
-}
+};
+
+export default  RegisterPage;

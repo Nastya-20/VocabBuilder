@@ -1,8 +1,12 @@
 import React, { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { useNavigate, Routes, Route } from 'react-router-dom';
+import { register, logIn } from './redux/auth/operations';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Layout from './components/Layout/Layout';
 import './App.css'
-import { Routes, Route } from 'react-router-dom';
 
 const RegisterPage = React.lazy(() => import('../src/pages/RegisterPage/RegisterPage'));
 const LoginPage = React.lazy(() => import('../src/pages/LoginPage/LoginPage'));
@@ -14,16 +18,48 @@ const RecommendPage = React.lazy(() => import('../src/pages/RecommendPage/Recomm
 
 
 function App() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); 
+  
+  const handleRegister = async (data) => {
+    try {
+      await dispatch(register(data)).unwrap();
+      navigate('/dictionary'); 
+    } catch (error) {
+      console.error("❌ Registration failed:", error);
+      throw error; 
+    }
+  };
+
+  const handleLogin = async (data) => {
+    try {
+      await dispatch(logIn(data)).unwrap();
+      navigate('/dictionary');
+    } catch (error) {
+      console.error("❌ Logged failed:", error);
+      throw error;
+    }
+  };
+
    return (
     <>
        <Suspense fallback={<div>Loading...</div>}>
          <Routes>
-           <Route path='/' element={<RegisterPage />} />
-           <Route path='/login' element={<LoginPage />} />
-           <Route path='/favorites' element={<TrainingPage />} />
-           <Route path='/dictionary' element={<DictionaryPage />} />
-           <Route path='/recommend' element={<RecommendPage />} />
+           <Route path='/' element={<RegisterPage onSubmit={handleRegister} />} />
+           <Route path='/login' element={<LoginPage onSubmit={handleLogin} />} />
+           <Route
+             element={
+               <PrivateRoute>
+                 <Layout />
+               </PrivateRoute>
+             }
+           >
+             <Route path="/dictionary" element={<DictionaryPage />} />
+             <Route path="/recommend" element={<RecommendPage />} />
+             <Route path="/training" element={<TrainingPage />} />
+           </Route>
 
+           {/* 404 */}
            <Route path="*" element={<NotFoundPage />} />
          </Routes>
        </Suspense>
@@ -32,4 +68,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

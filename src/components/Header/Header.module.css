@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f5f5f5;
+}
+
+.burger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav.open {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: white;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+}

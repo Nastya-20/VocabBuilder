@@ -1,0 +1,180 @@
+.LoginContainer {
+    min-width: 320px;
+    min-height: 263px;
+    padding: 16px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 182px;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.logoIcon {
+    width: 36px;
+    height: 36px;
+}
+
+.logoName {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 133%;
+}
+
+.LoginImg {
+    width: 247px;
+    margin: 0 auto;
+}
+.formWords {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 43px;
+}
+.Form {
+    padding: 32px 16px;
+    border-radius: 25px 25px 0 0;
+    min-width: 320px;
+    min-height: 479px;
+    background: rgba(133, 170, 159, 0.1);
+}
+
+.formName {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 105%;
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+}
+
+.formText {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: rgba(18, 20, 23, 0.8);
+    margin-bottom: 16px;
+}
+
+input {
+    border: 1px solid rgba(18, 20, 23, 0.1);
+    border-radius: 15px;
+    padding: 16px 28px 16px 18px;
+    min-width: 288px;
+    min-height: 56px;
+    background: transparent;
+    margin-bottom: 14px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #121417;
+}
+
+input:-webkit-autofill {
+    background: transparent !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: #121417 !important;
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 16px !important;
+}
+
+.formBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.buttonFormLogin {
+    border-radius: 30px;
+    padding: 16px 16px;
+    min-width: 288px;
+    min-height: 56px;
+    background-color: #85AA9F;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: #FCFCFC;
+    margin-top: 18px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.buttonFormLogin:hover,
+.buttonFormLogin:focus {
+    background-color: #A5C0B8;
+}
+
+input::placeholder {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #121417;
+}
+
+input:hover,
+input:focus {
+    outline: none;
+    border: 1px solid #85AA9F;
+}
+
+.buttonFormRegister {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: rgba(18, 20, 23, 0.5);
+    background-color: transparent;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.buttonFormRegister:hover,
+.buttonFormRegister:focus {
+    color: #121417;
+}
+
+.inputInner {
+    position: relative;
+
+}
+
+.iconEye {
+    position: absolute;
+    top: 25%;
+    right: 18px;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    stroke: #121417;
+    fill: #fff;
+    cursor: pointer;
+}
+
+.errors {
+    color: #e70808;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 137%;
+    height: 10px;
+    margin-bottom: 8px;
+}
+
+@media screen and (min-width: 375px) {
+    input {
+        width: 339px;
+    }
+
+    .buttonFormLogin {
+        width: 343px;
+    }
+}

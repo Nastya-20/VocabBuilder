@@ -1,0 +1,36 @@
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    height: 1011px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 16px;
+    padding-left: 16px;
+    z-index: 999;
+}
+.modalContent {
+    border-radius: 15px;
+    min-width: 310px;
+    height: 359px;
+    background: #85AA9F;
+    padding: 48px 16px;
+    position: relative;
+}
+
+.closeBtn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: none;
+    color: #FCFCFC;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
