@@ -1,14 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./UserNav.module.css";
+import css from "./UserNav.module.css";
 
 const UserNav = ({ onLinkClick }) => {
+
     return (
-        <ul className={styles.navList}>
+        <ul className={css.navList}>
             <li>
                 <NavLink
                     to="/dictionary"
-                    className={({ isActive }) => (isActive ? styles.active : "")}
+                    className={({ isActive }) => (isActive ? css.active : "")}
                     onClick={onLinkClick}
                 >
                     Dictionary
@@ -17,7 +18,7 @@ const UserNav = ({ onLinkClick }) => {
             <li>
                 <NavLink
                     to="/recommend"
-                    className={({ isActive }) => (isActive ? styles.active : "")}
+                    className={({ isActive }) => (isActive ? css.active : "")}
                     onClick={onLinkClick}
                 >
                     Recommend
@@ -26,14 +27,14 @@ const UserNav = ({ onLinkClick }) => {
             <li>
                 <NavLink
                     to="/training"
-                    className={({ isActive }) => (isActive ? styles.active : "")}
+                    className={({ isActive }) => (isActive ? css.active : "")}
                     onClick={onLinkClick}
                 >
                     Training
                 </NavLink>
             </li>
         </ul>
-    );
+      );
 };
 
 export default UserNav;

@@ -5,8 +5,6 @@ import { fetchWords } from '../../redux/words/wordsSlice';
 import { fetchStatistics } from '../../redux/statistics/statisticsSlice';
 import Dashboard from '../../components/Dashboard/Dashboard';
 import WordsTable from '../../components/WordsTable/WordsTable';
-import UseBar from '../../components/UserBar/UserBar';
-import UserNav from '../../components/UserNav/UserNav';
 import WordsPagination from '../../components/WordsPagination/WordsPagination';
 
 const DictionaryPage = () => {
@@ -20,8 +18,6 @@ const DictionaryPage = () => {
 
     return (
         <div>
-            <UseBar />
-            <UserNav/>
             <Dashboard />
             <WordsTable />
             <WordsPagination />

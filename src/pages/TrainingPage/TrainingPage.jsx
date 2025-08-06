@@ -1,3 +1,4 @@
+import ProgressBar from '../'
 const TrainingPage = () => {
     return (
         <ProgressBar />

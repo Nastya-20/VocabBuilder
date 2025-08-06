@@ -52,11 +52,9 @@ const WordsTable = () => {
             {
                 Header: 'n',
                 Cell: ({ row }) => (
-                    <>
-                        <IconButton onClick={(e) => handleOpenActions(e, row.original)}>
-                            <MoreVertIcon />
-                        </IconButton>
-                    </>
+                    <IconButton onClick={(e) => handleOpenActions(e, row.original)}>
+                        <MoreVertIcon />
+                    </IconButton>
                 ),
             },
         ],
@@ -70,26 +68,36 @@ const WordsTable = () => {
         <div>
             <table {...getTableProps()} style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
-                    {headerGroups.map(headerGroup => (
-                        <tr {...headerGroup.getHeaderGroupProps()} style={{ borderBottom: '1px solid #ddd' }}>
-                            {headerGroup.headers.map(column => (
-                                <th {...column.getHeaderProps()} style={{ padding: '10px', textAlign: 'left' }}>
-                                    {column.render('Header')}
-                                </th>
-                            ))}
-                        </tr>
-                    ))}
+                    {headerGroups.map(headerGroup => {
+                        const { key, ...restHeaderGroupProps } = headerGroup.getHeaderGroupProps();
+                        return (
+                            <tr key={key} {...restHeaderGroupProps} style={{ borderBottom: '1px solid #ddd' }}>
+                                {headerGroup.headers.map(column => {
+                                    const { key, ...restColumnProps } = column.getHeaderProps();
+                                    return (
+                                        <th key={key} {...restColumnProps} style={{ padding: '10px', textAlign: 'left' }}>
+                                            {column.render('Header')}
+                                        </th>
+                                    );
+                                })}
+                            </tr>
+                        );
+                    })}
                 </thead>
                 <tbody {...getTableBodyProps()}>
                     {rows.map(row => {
                         prepareRow(row);
+                        const { key, ...restRowProps } = row.getRowProps();
                         return (
-                            <tr {...row.getRowProps()} style={{ borderBottom: '1px solid #f0f0f0' }}>
-                                {row.cells.map(cell => (
-                                    <td {...cell.getCellProps()} style={{ padding: '10px' }}>
-                                        {cell.render('Cell')}
-                                    </td>
-                                ))}
+                            <tr key={key} {...restRowProps} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                                {row.cells.map(cell => {
+                                    const { key, ...restCellProps } = cell.getCellProps();
+                                    return (
+                                        <td key={key} {...restCellProps} style={{ padding: '10px' }}>
+                                            {cell.render('Cell')}
+                                        </td>
+                                    );
+                                })}
                             </tr>
                         );
                     })}
@@ -119,3 +127,4 @@ const WordsTable = () => {
 };
 
 export default WordsTable;
+

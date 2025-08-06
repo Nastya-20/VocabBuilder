@@ -1,0 +1,26 @@
+.userBar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 83px;
+    height: 36px;
+}
+
+.userBarName {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #121417;
+}
+.userIconCircle {
+    border-radius: 30px;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background-color: #85AA9F;
+}
+.userIcon{
+    width: 20;
+    height: 20px;
+    fill: #fcfcfc;
+}
