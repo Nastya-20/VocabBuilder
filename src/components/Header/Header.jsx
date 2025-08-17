@@ -46,7 +46,7 @@ const Header = () => {
                         <div className={css.modalBackdrop}>
                         <div className={css.modalContent}>
                             <div className={css.headerUserBar}>
-                            <UserBar />
+                            <UserBar variant="menu" />
                              <button  className={css.closeBtn}
                                     onClick={() => setMenuOpen(false)}
                                 >

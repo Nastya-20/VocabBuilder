@@ -12,6 +12,9 @@
     line-height: 150%;
     color: #121417;
 }
+
+/* --- ХЕДЕР --- */
+
 .userIconCircle {
     border-radius: 30px;
     width: 36px;
@@ -23,4 +26,25 @@
     width: 20;
     height: 20px;
     fill: #fcfcfc;
+}
+
+/* --- БУРГЕР-МЕНЮ --- */
+.menuBar {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menuUserName {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #fcfcfc;
+}
+
+.menuIconCircle {
+    background-color: #fff;
+}
+
+.menuIconCircle .userIcon {
+    fill: #85AA9F;
 }

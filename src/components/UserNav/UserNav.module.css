@@ -1,3 +1,46 @@
 .navList{
-    
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.logoutBtn {
+    background: none;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: #FCFCFC;
+}
+
+.link {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: #fcfcfc;
+}
+
+.active {
+    border-radius: 15px;
+    padding: 12px 20px;
+    width: 110px;
+    height: 43px;
+    background-color: #FCFCFC;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: #121417;
+}
+
+.logout{
+    display: flex;
+    gap: 6px;
+}
+
+.arrowIcon {
+    stroke: #FCFCFC;
+    /* або будь-який інший колір */
+    fill: none;
 }
