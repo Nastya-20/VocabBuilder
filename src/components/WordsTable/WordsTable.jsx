@@ -5,6 +5,7 @@ import { IconButton, Popover, MenuItem, LinearProgress } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import EditWordModal from '../../components/Modals/EditWordModal';
 import { deleteWord } from '../../redux/words/wordsSlice';
+import css from '../WordsTable/WordsTable.module.css';
 
 const WordsTable = () => {
     const dispatch = useDispatch();
@@ -21,7 +22,6 @@ const WordsTable = () => {
 
     const handleCloseActions = () => {
         setAnchorEl(null);
-        setSelectedWord(null);
     };
 
     const handleEdit = () => {
@@ -50,7 +50,7 @@ const WordsTable = () => {
                 ),
             },
             {
-                Header: 'n',
+                Header: '...',
                 Cell: ({ row }) => (
                     <IconButton onClick={(e) => handleOpenActions(e, row.original)}>
                         <MoreVertIcon />
@@ -65,17 +65,17 @@ const WordsTable = () => {
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
 
     return (
-        <div>
-            <table {...getTableProps()} style={{ width: '100%', borderCollapse: 'collapse' }}>
-                <thead>
+        <div className={css.wordsTable}>
+            <table className={css.wordsTitle} {...getTableProps()} style={{ borderCollapse: 'collapse' }}>
+                <thead className={css.wordsThead}>
                     {headerGroups.map(headerGroup => {
                         const { key, ...restHeaderGroupProps } = headerGroup.getHeaderGroupProps();
                         return (
-                            <tr key={key} {...restHeaderGroupProps} style={{ borderBottom: '1px solid #ddd' }}>
+                            <tr className={css.wordsTr} key={key} {...restHeaderGroupProps}>
                                 {headerGroup.headers.map(column => {
                                     const { key, ...restColumnProps } = column.getHeaderProps();
                                     return (
-                                        <th key={key} {...restColumnProps} style={{ padding: '10px', textAlign: 'left' }}>
+                                        <th key={key} {...restColumnProps}>
                                             {column.render('Header')}
                                         </th>
                                     );
@@ -127,4 +127,5 @@ const WordsTable = () => {
 };
 
 export default WordsTable;
+
 

@@ -1,10 +1,10 @@
 import React from "react";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { selectUser } from '../../redux/auth/selectors';
 import css from "./UserBar.module.css";
 
 const UserBar = ({ variant = "header" }) => {
-    // const user = useSelector((state) => state.auth.user);
-    const user = { name: "Asya" };
+    const user = useSelector(selectUser);
 
     return (
         <div className={`${css.userBar} ${variant === "menu" ? css.menuBar : ""}`}>

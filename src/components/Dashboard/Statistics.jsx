@@ -4,7 +4,7 @@ import { fetchStatistics } from '../../redux/statistics/statisticsSlice';
 import css from '../Dashboard/Statistics.module.css';
 const Statistics = () => {
     const dispatch = useDispatch();
-    const { totalWords, tasks, status, error } = useSelector(state => state.statistics);
+    const { totalCount, tasks, status, error } = useSelector(state => state.statistics);
 
     useEffect(() => {
         dispatch(fetchStatistics());
@@ -20,16 +20,10 @@ const Statistics = () => {
 
     return (
         <div className="statistics">
-            <p className={css.study}>To study: <strong className={css.strong}>{totalWords}</strong></p>
-            {tasks.length > 0 ? (
-                <ul>
-                    {tasks.map((task, idx) => (
-                        <li key={idx}>{task}</li>
-                    ))}
-                </ul>
-            ) : (
-                <p>No tasks available</p>
-            )}
+            <p className={css.study}>
+                To study: <strong className={css.strong}>{totalCount}
+                </strong>
+            </p>
         </div>
     );
 };

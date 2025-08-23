@@ -1,0 +1,24 @@
+.wordsTable {
+    min-width: 375px;
+    height: 563px;
+    padding: 0 16px;
+}
+.wordsTitle {
+    width: 343px;
+    height: 563px;
+    
+}
+.wordsThead{
+    border-bottom: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    border-radius: 8px 0 0 0;
+    padding: 16px 27px 16px 14px;
+    background: rgba(133, 170, 159, 0.1);
+}
+.wordsTr{
+border-bottom: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    border-radius: 8px 0 0 0;
+    padding: 16px 27px 16px 14px;
+    background: rgba(133, 170, 159, 0.1);
+}

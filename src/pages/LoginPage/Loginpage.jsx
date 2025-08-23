@@ -6,7 +6,7 @@ import { loginSchema } from '../../components/authSchema';
 import css from "./LoginPage.module.css";
 import { toast } from 'react-toastify'; 
 
-const LoginPage = ({ onSubmit, onClose }) => {
+const LoginPage = ({ onSubmit }) => {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
@@ -22,7 +22,6 @@ const LoginPage = ({ onSubmit, onClose }) => {
     const submitForm = async (data) => {
         try {
             await onSubmit(data); 
-            onClose();
             reset();
         } catch (error) {
             toast.error(error.message || "Login failed");

@@ -13,7 +13,7 @@ import {
 import wordsReducer from './words/wordsSlice';
 import { authReducer } from './auth/slice';
 import statisticsReducer from './statistics/statisticsSlice';
-import categoriesReducer from './categories/categoriesSlice';
+import {categoriesReducer} from './categories/categoriesSlice';
 
 const authPersistConfig = {
     key: 'auth',
